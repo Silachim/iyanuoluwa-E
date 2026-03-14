@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research & Publications — Iyanuoluwa E. Olalowo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .research-list { display:flex; flex-direction:column; }
+    .research-item {
+      display: grid; grid-template-columns: 90px 1fr auto;
+      gap: 2rem; align-items: start;
+      padding: 2rem 0; border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .research-item:last-child { border-bottom: none; }
+    .research-item:hover { background: var(--accent-light); margin: 0 -3rem; padding: 2rem 3rem; }
+    .research-year { font-family:'Playfair Display',serif; font-style:italic; font-size:0.88rem; color:var(--muted); padding-top:0.2rem; }
+    .research-title { font-family:'Playfair Display',serif; font-weight:700; font-size:1.1rem; margin-bottom:0.4rem; line-height:1.35; }
+    .research-meta { font-size:0.83rem; color:var(--muted); margin-bottom:0.65rem; font-style:italic; }
+    .research-abstract { font-size:0.9rem; color:var(--muted); line-height:1.7; }
+    .research-badge { font-size:0.68rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; padding:0.3rem 0.65rem; white-space:nowrap; border:1px solid var(--border); color:var(--muted); }
+    .research-badge.published { border-color:#27ae60; color:#27ae60; }
+    .research-badge.forthcoming { border-color:var(--accent); color:var(--accent); }
+    .research-badge.chapter { border-color:#2980b9; color:#2980b9; }
+    .research-badge.conference { border-color:#8e44ad; color:#8e44ad; }
+
+    .filter-bar {
+      display:flex; gap:0.75rem; flex-wrap:wrap;
+      margin-bottom:2.5rem; padding-bottom:1.5rem;
+      border-bottom:1px solid var(--border);
+    }
+    .filter-btn {
+      background:transparent; border:1px solid var(--border);
+      padding:0.4rem 1rem; font-size:0.78rem; letter-spacing:0.06em;
+      text-transform:uppercase; cursor:pointer; transition:all 0.2s;
+      font-family:'DM Sans',sans-serif; color:var(--muted);
+    }
+    .filter-btn:hover, .filter-btn.active { background:var(--ink); color:var(--white); border-color:var(--ink); }
+
+    .rg-callout {
+      background:var(--ink); color:var(--white);
+      padding:2rem 2.5rem; display:flex;
+      justify-content:space-between; align-items:center; gap:2rem;
+      margin-top:3rem; flex-wrap:wrap;
+    }
+    .rg-callout-text { font-family:'Playfair Display',serif; font-style:italic; font-size:1.1rem; }
+    .rg-callout-sub { font-size:0.82rem; color:rgba(255,255,255,0.5); margin-top:0.25rem; }
+
+    @media (max-width:900px) {
+      .research-item { grid-template-columns:1fr; gap:0.5rem; }
+      .research-item:hover { margin:0; padding:2rem 0; }
+      .rg-callout { flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Iyanuoluwa E. Olalowo</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-banner">
+    <div class="page-banner-inner">
+      <div class="page-banner-label">02 — Scholarship</div>
+      <h1 class="page-banner-title">Research &amp; <em>Publications</em></h1>
+      <p class="page-banner-sub">22 publications · 208 citations · 2,749 reads — ResearchGate &amp; Google Scholar</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterPubs('all', this)">All</button>
+      <button class="filter-btn" onclick="filterPubs('journal', this)">Journal Articles</button>
+      <button class="filter-btn" onclick="filterPubs('conference', this)">Conference Papers</button>
+      <button class="filter-btn" onclick="filterPubs('chapter', this)">Book Chapters</button>
+    </div>
+
+    <div class="research-list" id="pubList">
+
+      <!-- 2025 -->
+      <div class="research-item" data-type="journal">
+        <div class="research-year">2025</div>
+        <div>
+          <div class="research-title">Reconceptualising Early Childhood Education in Nigeria: A Praxis for Policy and Research</div>
+          <div class="research-meta">Oxford Review of Education — Olalowo, I.E., Baruwa, I.B., Olalowo, O.H., &amp; Aluko, O.F.</div>
+          <div class="research-abstract">Emphasises the urgent need to reconceptualise Nigeria's early childhood education policy and research practice, arguing for frameworks that centre African philosophical traditions and contextual realities.</div>
+        </div>
+        <span class="research-badge published">Published</span>
+      </div>
+
+      <!-- 2024 -->
+      <div class="research-item" data-type="journal">
+        <div class="research-year">2024</div>
+        <div>
+          <div class="research-title">Book Review: Understanding the Transnational Lives and Literacies of Immigrant Children (Jungmin Kwon)</div>
+          <div class="research-meta">Global Studies of Childhood, Vol. 14 (3), pp. 361–363</div>
+          <div class="research-abstract">A critical review examining how Kwon's work contributes to understandings of family literacy practices, language maintenance, and identity among immigrant children in diaspora contexts.</div>
+        </div>
+        <span class="research-badge published">Published</span>
+      </div>
+
+      <div class="research-item" data-type="conference">
+        <div class="research-year">2024</div>
+        <div>
+          <div class="research-title">Assessment of Learning Opportunities Among Youth in Nigeria During the COVID-19 Pandemic</div>
+          <div class="research-meta">In: Lest We Forget — Youth Lenses on Coping in a Post-COVID World (UNESCO, 2024) — Olalowo, I.E. &amp; Salami, I.A.</div>
+          <div class="research-abstract">Investigates the disruptions to youth learning in Nigeria caused by the nationwide school closure during the COVID-19 pandemic, and explores adaptive educational strategies employed by learners and families.</div>
+        </div>
+        <span class="research-badge chapter">Book Chapter</span>
+      </div>
+
+      <!-- 2023 -->
+      <div class="research-item" data-type="journal">
+        <div class="research-year">2023</div>
+        <div>
+          <div class="research-title">Prospect of "Igba Oju" in African Philosophy: Pathway to Moral Development of Young Children in Southwestern Nigeria</div>
+          <div class="research-meta">Peer-reviewed article — Oladele, M.T.; Egbedeyi, T.F.; &amp; Olalowo, I.E.</div>
+          <div class="research-abstract">Traces the trend of moral values enshrined in Yoruba cultural proverbs, drawing on qualitative interviews with village elders to theorise indigenous practices for whole-child development.</div>
+        </div>
+        <span class="research-badge published">Published</span>
+      </div>
+
+      <!-- 2022 -->
+      <div class="research-item" data-type="journal">
+        <div class="research-year">2022</div>
+        <div>
+          <div class="research-title">Fukuyama on Thymos: Implications for the Nigerian State of Education</div>
+          <div class="research-meta">Peer-reviewed article — Aluko, O.; Baruwa, I.; &amp; Olalowo, I.E.</div>
+          <div class="research-abstract">Argues that the struggle for recognition (thymos) is an underlying driver of conflicts and inequities in Nigeria's educational system, drawing on Fukuyama's political philosophy.</div>
+        </div>
+        <span class="research-badge published">Published</span>
+      </div>
+
+      <div class="research-item" data-type="journal">
+        <div class="research-year">2022</div>
+        <div>
+          <div class="research-title">Assessment of Knowledge Gained and Knowledge Lost in Early Childhood Education Teacher Preparation and Professional Practice in Oyo State</div>
+          <div class="research-meta">Peer-reviewed article — Salami, I.A.; Olalowo, I.E.; &amp; Ogunnoiki, A.O.</div>
+          <div class="research-abstract">Evaluates the alignment between preservice teacher preparation programmes and actual professional practice in early childhood settings in Oyo State, identifying critical gaps in knowledge transfer.</div>
+        </div>
+        <span class="research-badge published">Published</span>
+      </div>
+
+      <!-- 2021 -->
+      <div class="research-item" data-type="journal">
+        <div class="research-year">2021</div>
+        <div>
+          <div class="research-title">Combating the Danger of a Single Story: Empirical Comparison of Preschool Resources in Rural and Urban Communities of Ibadan</div>
+          <div class="research-meta">Early Childhood Education Research — Olalowo, I.E. &amp; Salami, I.A.</div>
+          <div class="research-abstract">Employs a descriptive survey design to compare preschool environmental resources in rural and urban Ibadan, challenging single-story narratives about early childhood infrastructure in Nigeria.</div>
+        </div>
+        <span class="research-badge published">Published</span>
+      </div>
+
+      <div class="research-item" data-type="conference">
+        <div class="research-year">2021</div>
+        <div>
+          <div class="research-title">A Tale of Two Childhoods: Exploring Holistic Development of Preschoolers in Rural and Urban Communities</div>
+          <div class="research-meta">Conference presentation</div>
+          <div class="research-abstract">Comparative exploration of how rural-urban disparities shape all domains of early childhood development, with implications for equitable resource distribution and policy intervention.</div>
+        </div>
+        <span class="research-badge conference">Conference</span>
+      </div>
+
+      <!-- 2020 -->
+      <div class="research-item" data-type="journal">
+        <div class="research-year">2020</div>
+        <div>
+          <div class="research-title">Accounts and Thoughts of Overage Children: A Qualitative Study on the Physical and Emotional Environment of Preschools in Ibadan, Nigeria</div>
+          <div class="research-meta">American Journal of Qualitative Research, Vol. 4 (3), pp. 1–13</div>
+          <div class="research-abstract">Presents rich qualitative data on how overage children experience and narrate the physical and socio-emotional environments of preschool centres in Ibadan, with implications for inclusive ECE practice.</div>
+        </div>
+        <span class="research-badge published">Published</span>
+      </div>
+
+      <div class="research-item" data-type="conference">
+        <div class="research-year">2020</div>
+        <div>
+          <div class="research-title">Assessing Indigenous Language Acquisition of Primary Pupils in Ungoverned Spaces in a (Re-)Quest for Sustainable Economic Development and Decolonization of Education</div>
+          <div class="research-meta">Conference paper — Olalowo, I.E.</div>
+          <div class="research-abstract">Examines patterns of indigenous language acquisition among primary pupils in under-resourced and ungoverned educational spaces, linking language preservation to sustainable development and decolonial education.</div>
+        </div>
+        <span class="research-badge conference">Conference</span>
+      </div>
+
+      <div class="research-item" data-type="conference">
+        <div class="research-year">2020</div>
+        <div>
+          <div class="research-title">Challenges of Community Participation and Stakeholders' Collaboration in Accelerated Innovation for Early Childhood Education in Two Rural Communities of Nigeria</div>
+          <div class="research-meta">Conference paper — full text available on ResearchGate</div>
+          <div class="research-abstract">Investigates barriers to meaningful community participation and stakeholder collaboration in ECE innovation efforts in two rural Nigerian communities, offering recommendations for sustainable engagement.</div>
+        </div>
+        <span class="research-badge conference">Conference</span>
+      </div>
+
+    </div>
+
+    <div class="rg-callout">
+      <div>
+        <div class="rg-callout-text">View the complete list of 22 publications on ResearchGate</div>
+        <div class="rg-callout-sub">22 publications · 2,749 reads · 17 citations tracked on ResearchGate</div>
+      </div>
+      <a href="https://www.researchgate.net/profile/Iyanuoluwa-Olalowo" target="_blank" class="btn-primary" style="background:var(--accent);">Open ResearchGate ↗</a>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <div class="footer-name">Iyanuoluwa<br /><em>E. Olalowo</em></div>
+      <div class="footer-affil">Research Assistant, Early Childhood Education — Kent State University</div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:iolalowo@kent.edu" class="footer-link">iolalowo@kent.edu</a>
+      <a href="https://www.researchgate.net/profile/Iyanuoluwa-Olalowo" class="footer-link" target="_blank">ResearchGate</a>
+      <a href="https://scholar.google.com/citations?user=_GOHKNoAAAAJ" class="footer-link" target="_blank">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-9217-3106" class="footer-link" target="_blank">ORCID</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <span>© 2026 Iyanuoluwa Emmanuel Olalowo. All rights reserved.</span>
+    <span>Kent State University</span>
+  </div>
+
+  <script>
+    function filterPubs(type, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.research-item').forEach(item => {
+        if (type === 'all' || item.dataset.type === type) {
+          item.style.display = 'grid';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

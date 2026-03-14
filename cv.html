@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum Vitae — Iyanuoluwa E. Olalowo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #cv-main { background: var(--white); }
+    .cv-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; }
+    .cv-section { margin-bottom:3rem; }
+    .cv-section h3 { font-family:'Playfair Display',serif; font-weight:900; font-size:1.15rem; margin-bottom:1.75rem; padding-bottom:0.65rem; border-bottom:2px solid var(--ink); }
+    .cv-entry { display:grid; grid-template-columns:110px 1fr; gap:1rem; margin-bottom:1.75rem; }
+    .cv-year { font-size:0.78rem; color:var(--muted); padding-top:0.2rem; font-weight:500; line-height:1.5; }
+    .cv-role { font-weight:500; font-size:0.95rem; margin-bottom:0.2rem; }
+    .cv-org { font-size:0.83rem; color:var(--accent); margin-bottom:0.3rem; font-style:italic; }
+    .cv-detail { font-size:0.82rem; color:var(--muted); line-height:1.65; }
+
+    .cv-download-bar {
+      background:var(--paper); border:1px solid var(--border);
+      padding:2rem 2.5rem; display:flex; justify-content:space-between;
+      align-items:center; gap:2rem; flex-wrap:wrap; margin-top:2.5rem;
+    }
+    .cv-download-text { font-family:'Playfair Display',serif; font-style:italic; font-size:1.05rem; }
+
+    @media (max-width:900px) {
+      .cv-grid { grid-template-columns:1fr; gap:2.5rem; }
+      .cv-entry { grid-template-columns:1fr; gap:0.25rem; }
+      .cv-download-bar { flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Iyanuoluwa E. Olalowo</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="cv.html" class="active">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-banner">
+    <div class="page-banner-inner">
+      <div class="page-banner-label">04 — Academic Record</div>
+      <h1 class="page-banner-title">Curriculum <em>Vitae</em></h1>
+      <p class="page-banner-sub">Iyanuoluwa Emmanuel Olalowo · iolalowo@kent.edu · ORCID: 0000-0002-9217-3106</p>
+    </div>
+  </div>
+
+  <section id="cv-main">
+    <div class="cv-grid">
+
+      <!-- LEFT COLUMN -->
+      <div>
+        <div class="cv-section">
+          <h3>Education</h3>
+          <div class="cv-entry">
+            <div class="cv-year">2020 – Present</div>
+            <div>
+              <div class="cv-role">PhD, Curriculum &amp; Instruction (Early Childhood Education)</div>
+              <div class="cv-org">Kent State University, Kent, OH</div>
+              <div class="cv-detail">School of Teaching, Learning &amp; Curriculum Studies. Dissertation: "Unpacking Teacher Recruitment, Candidacy, and Preparation in Early Childhood Education Among Underrepresented Groups."</div>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">Prior</div>
+            <div>
+              <div class="cv-role">Earlier Degrees</div>
+              <div class="cv-org">Nigeria</div>
+              <div class="cv-detail">Undergraduate and postgraduate study in Education and related fields in Nigeria prior to doctoral training at Kent State University.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Academic Positions</h3>
+          <div class="cv-entry">
+            <div class="cv-year">2020 – Present</div>
+            <div>
+              <div class="cv-role">Research Assistant</div>
+              <div class="cv-org">KSU Child Development Center, Kent State University</div>
+              <div class="cv-detail">Supporting faculty research on preservice teacher preparation, early literacy, and ECE policy. Received doctoral research grant for early childhood education research.</div>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">2022 – Present</div>
+            <div>
+              <div class="cv-role">Graduate Teaching Assistant</div>
+              <div class="cv-org">Dept. of Teaching, Learning &amp; Curriculum Studies, KSU</div>
+              <div class="cv-detail">Courses: Foundations of Early Childhood Education; Literacy in the Early Years; Child Development and Learning.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Awards &amp; Grants</h3>
+          <div class="cv-entry">
+            <div class="cv-year">Recent</div>
+            <div>
+              <div class="cv-role">Doctoral Research Grant</div>
+              <div class="cv-org">Kent State University Child Development Center</div>
+              <div class="cv-detail">Awarded for research on early childhood education practices and outcomes.</div>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">Ongoing</div>
+            <div>
+              <div class="cv-role">Graduate Assistantship</div>
+              <div class="cv-org">Kent State University</div>
+              <div class="cv-detail">Full funding including tuition waiver and stipend in recognition of research productivity.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div>
+        <div class="cv-section">
+          <h3>Selected Publications</h3>
+          <div class="cv-entry">
+            <div class="cv-year">2025</div>
+            <div>
+              <div class="cv-role">Reconceptualising Early Childhood Education in Nigeria</div>
+              <div class="cv-org">Oxford Review of Education</div>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">2024</div>
+            <div>
+              <div class="cv-role">Assessment of Learning Opportunities Among Youth in Nigeria (COVID-19)</div>
+              <div class="cv-org">In: Lest We Forget — UNESCO, 2024</div>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">2023</div>
+            <div>
+              <div class="cv-role">Book Review: Transnational Lives and Literacies of Immigrant Children</div>
+              <div class="cv-org">Global Studies of Childhood, Vol. 14 (3)</div>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">2022</div>
+            <div>
+              <div class="cv-role">Assessment of Knowledge Gained and Lost in ECE Teacher Preparation in Oyo State</div>
+              <div class="cv-org">Peer-reviewed article (with Salami &amp; Ogunnoiki)</div>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">2021</div>
+            <div>
+              <div class="cv-role">Combating the Danger of a Single Story: Preschool Resources in Ibadan</div>
+              <div class="cv-org">ECE Research (with Salami, I.A.)</div>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">2020</div>
+            <div>
+              <div class="cv-role">Accounts of Overage Children: Preschool Environments in Ibadan</div>
+              <div class="cv-org">American Journal of Qualitative Research, 4(3)</div>
+            </div>
+          </div>
+          <div style="margin-top:0.5rem;">
+            <a href="research.html" class="btn-outline" style="font-size:0.78rem; padding:0.6rem 1.25rem;">View All 22 Publications →</a>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Research Methods &amp; Skills</h3>
+          <div class="cv-entry">
+            <div class="cv-year">Methods</div>
+            <div><div class="cv-detail">Mixed methods, qualitative inquiry, quantitative design, case study, survey design, classroom observation, semi-structured interviews</div></div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">Software</div>
+            <div><div class="cv-detail">NVivo, SPSS, R (basic), ATLAS.ti, Google Classroom, Seesaw</div></div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">Languages</div>
+            <div><div class="cv-detail">English (fluent), Yoruba (native)</div></div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">Memberships</div>
+            <div><div class="cv-detail">NAEYC, AERA (Division K — Teaching &amp; Teacher Education)</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cv-download-bar">
+      <div>
+        <div class="cv-download-text">Full CV available as PDF download</div>
+        <div style="font-size:0.82rem; color:var(--muted); margin-top:0.25rem;">Includes complete publication list, conference presentations, and service record</div>
+      </div>
+      <a href="cv.pdf" class="btn-primary" download>Download CV (PDF)</a>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <div class="footer-name">Iyanuoluwa<br /><em>E. Olalowo</em></div>
+      <div class="footer-affil">Research Assistant, Early Childhood Education — Kent State University</div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:iolalowo@kent.edu" class="footer-link">iolalowo@kent.edu</a>
+      <a href="https://www.researchgate.net/profile/Iyanuoluwa-Olalowo" class="footer-link" target="_blank">ResearchGate</a>
+      <a href="https://scholar.google.com/citations?user=_GOHKNoAAAAJ" class="footer-link" target="_blank">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-9217-3106" class="footer-link" target="_blank">ORCID</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <span>© 2026 Iyanuoluwa Emmanuel Olalowo. All rights reserved.</span>
+    <span>Kent State University</span>
+  </div>
+
+</body>
+</html>

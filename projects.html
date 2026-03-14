@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Iyanuoluwa E. Olalowo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #projects-main { background: var(--ink); color: var(--white); }
+    #projects-main .section-title { color: var(--white); }
+    #projects-main .section-header { border-bottom-color: rgba(255,255,255,0.15); }
+
+    .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1); }
+    .project-card { background:var(--ink); padding:2.25rem; transition:background 0.2s; }
+    .project-card:hover { background:#1c1b18; }
+    .project-icon { width:38px; height:38px; background:var(--accent); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; font-size:1rem; }
+    .project-title { font-family:'Playfair Display',serif; font-weight:700; font-size:1.1rem; margin-bottom:0.65rem; line-height:1.3; }
+    .project-desc { font-size:0.87rem; color:rgba(255,255,255,0.55); line-height:1.75; margin-bottom:1.25rem; }
+    .project-tags { display:flex; flex-wrap:wrap; gap:0.4rem; }
+    .project-tag { font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; border:1px solid rgba(255,255,255,0.18); padding:0.25rem 0.6rem; color:rgba(255,255,255,0.45); }
+    .project-status { font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); font-weight:500; margin-bottom:0.5rem; }
+
+    #collab { background:var(--white); border-bottom:1px solid var(--border); }
+    .collab-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .collab-card { border:1px solid var(--border); padding:1.75rem; transition:border-color 0.2s; }
+    .collab-card:hover { border-color:var(--accent); }
+    .collab-name { font-family:'Playfair Display',serif; font-weight:700; font-size:1rem; margin-bottom:0.35rem; }
+    .collab-inst { font-size:0.82rem; color:var(--muted); margin-bottom:0.5rem; }
+    .collab-area { font-size:0.78rem; color:var(--accent); font-weight:500; letter-spacing:0.06em; text-transform:uppercase; }
+
+    @media (max-width:900px) {
+      .projects-grid { grid-template-columns:1fr; }
+      .collab-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Iyanuoluwa E. Olalowo</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-banner">
+    <div class="page-banner-inner">
+      <div class="page-banner-label">03 — Ongoing Work</div>
+      <h1 class="page-banner-title">Research <em>Projects</em></h1>
+      <p class="page-banner-sub">Funded studies, fieldwork, and collaborative initiatives in early childhood education</p>
+    </div>
+  </div>
+
+  <section id="projects-main">
+    <div class="section-header">
+      <span class="section-num" style="color:var(--accent);">Active Projects</span>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon">🧒</div>
+        <div class="project-status">Ongoing · Funded</div>
+        <div class="project-title">Teacher Recruitment &amp; Candidacy Study</div>
+        <p class="project-desc">
+          A longitudinal mixed-methods investigation examining the process and product of
+          early childhood teacher recruitment, candidacy screening, and preparation outcomes —
+          with a focus on underrepresented candidates at Kent State University.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Mixed Methods</span>
+          <span class="project-tag">Teacher Prep</span>
+          <span class="project-tag">KSU</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📚</div>
+        <div class="project-status">Ongoing · Field-Based</div>
+        <div class="project-title">ECE Policy Reconceptualisation: Nigeria &amp; Africa</div>
+        <p class="project-desc">
+          A cross-institutional research effort examining how African philosophical frameworks,
+          indigenous knowledge systems, and postcolonial theory can inform the reconceptualisation
+          of early childhood education policy and research in Nigeria and across sub-Saharan Africa.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">ECE Policy</span>
+          <span class="project-tag">Nigeria</span>
+          <span class="project-tag">Decolonial</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🌍</div>
+        <div class="project-status">Ongoing · Collaborative</div>
+        <div class="project-title">Indigenous Language Preservation in Ungoverned Educational Spaces</div>
+        <p class="project-desc">
+          Examines indigenous language acquisition and loss among primary-age pupils in communities
+          with limited state educational infrastructure, connecting language preservation to
+          decolonisation goals and sustainable development frameworks.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Language</span>
+          <span class="project-tag">Decolonisation</span>
+          <span class="project-tag">Qualitative</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🏫</div>
+        <div class="project-status">Completed · Published</div>
+        <div class="project-title">A Tale of Two Preschools: Rural–Urban Comparative Study</div>
+        <p class="project-desc">
+          Investigated disparities in preschool environmental resources — physical, material, and
+          socio-emotional — between rural and urban communities in Ibadan, Nigeria. Findings published
+          in peer-reviewed outlets and presented at international conferences.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Survey Design</span>
+          <span class="project-tag">Nigeria</span>
+          <span class="project-tag">Rural-Urban</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🤝</div>
+        <div class="project-status">Completed · Published</div>
+        <div class="project-title">Moral Development Through Yoruba Philosophy ("Igba Oju")</div>
+        <p class="project-desc">
+          A qualitative inquiry tracing indigenous Yoruba moral education practices and their
+          relevance to whole-child development in contemporary early childhood settings in
+          Southwestern Nigeria. Conducted via interviews with community elders.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">African Philosophy</span>
+          <span class="project-tag">Yoruba Culture</span>
+          <span class="project-tag">Moral Dev.</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📊</div>
+        <div class="project-status">Completed · Doctoral Grant</div>
+        <div class="project-title">Doctoral Research Grant — KSU Child Development Center</div>
+        <p class="project-desc">
+          Received a doctoral research grant from Kent State University to investigate early
+          childhood education practices and outcomes at the KSU Child Development Center,
+          contributing to center-based policy and programming improvements.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Funded</span>
+          <span class="project-tag">KSU CDC</span>
+          <span class="project-tag">Applied Research</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="collab">
+    <div class="section-header">
+      <span class="section-num">Collaborators</span>
+    </div>
+    <div class="collab-grid">
+      <div class="collab-card">
+        <div class="collab-name">Ikeoluwapo B. Baruwa</div>
+        <div class="collab-inst">PhD Candidate, Queen's University, Canada</div>
+        <div class="collab-area">Education Philosophy · African Pedagogy</div>
+      </div>
+      <div class="collab-card">
+        <div class="collab-name">Ishola A. Salami</div>
+        <div class="collab-inst">Lecturer, University of Ibadan</div>
+        <div class="collab-area">Early Childhood Education · Nigeria</div>
+      </div>
+      <div class="collab-card">
+        <div class="collab-name">Oluwatosin F. Aluko</div>
+        <div class="collab-inst">Faculty of Education, University of Ibadan</div>
+        <div class="collab-area">Teacher Education · Philosophy of Education</div>
+      </div>
+      <div class="collab-card">
+        <div class="collab-name">Olawumi H. Olalowo</div>
+        <div class="collab-inst">The International School, University of Ibadan</div>
+        <div class="collab-area">Social Sciences · Secondary Education</div>
+      </div>
+      <div class="collab-card">
+        <div class="collab-name">Temitope Egbedeyi</div>
+        <div class="collab-inst">Researcher, Nigeria</div>
+        <div class="collab-area">African Philosophy · Child Development</div>
+      </div>
+      <div class="collab-card">
+        <div class="collab-name">A. O. Ogunnoiki</div>
+        <div class="collab-inst">Researcher, Oyo State</div>
+        <div class="collab-area">Teacher Preparation · ECE Practice</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <div class="footer-name">Iyanuoluwa<br /><em>E. Olalowo</em></div>
+      <div class="footer-affil">Research Assistant, Early Childhood Education — Kent State University</div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:iolalowo@kent.edu" class="footer-link">iolalowo@kent.edu</a>
+      <a href="https://www.researchgate.net/profile/Iyanuoluwa-Olalowo" class="footer-link" target="_blank">ResearchGate</a>
+      <a href="https://scholar.google.com/citations?user=_GOHKNoAAAAJ" class="footer-link" target="_blank">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-9217-3106" class="footer-link" target="_blank">ORCID</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <span>© 2026 Iyanuoluwa Emmanuel Olalowo. All rights reserved.</span>
+    <span>Kent State University</span>
+  </div>
+
+</body>
+</html>
