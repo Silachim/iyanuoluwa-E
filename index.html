@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iyanuoluwa E. Olalowo — Academic Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HOME-SPECIFIC ── */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-left {
+      padding: 5rem 3rem;
+      display: flex; flex-direction: column; justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+    .hero-tag {
+      display: inline-block; background: var(--accent); color: var(--white);
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 0.35rem 0.8rem; margin-bottom: 2rem;
+    }
+    .hero-name {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.8rem, 5.5vw, 5rem); line-height: 1.0;
+      letter-spacing: -2px; margin-bottom: 1.5rem;
+    }
+    .hero-name em { font-style: italic; color: var(--accent); }
+    .hero-bio {
+      font-size: 1rem; color: var(--muted); max-width: 480px;
+      margin-bottom: 2.5rem; line-height: 1.85;
+    }
+    .hero-bio strong { color: var(--ink); font-weight: 500; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── PHOTO PANEL ── */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .hero-right:hover .hero-photo { transform: scale(1.03); }
+    .hero-photo-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(14,13,11,0.75) 0%, transparent 60%);
+      padding: 2rem 2rem 1.75rem;
+    }
+    .hero-photo-badge {
+      display: inline-block; background: var(--accent); color: #fff;
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.3rem 0.7rem; margin-bottom: 0.5rem; font-weight: 500;
+    }
+    .hero-photo-caption {
+      color: rgba(255,255,255,0.8); font-size: 0.82rem;
+    }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+    }
+    .stat-item {
+      padding: 2rem 2.5rem;
+      border-right: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:hover { background: var(--accent-light); }
+    .stat-num {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: 2.8rem; color: var(--ink); line-height: 1; margin-bottom: 0.3rem;
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-label { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ── ABOUT SNIPPET ── */
+    #about-snippet { background: var(--paper); }
+    .about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+    .about-text p { font-size: 1rem; color: var(--muted); margin-bottom: 1.2rem; line-height: 1.85; }
+    .about-text p strong { color: var(--ink); font-weight: 500; }
+    .about-sidebar h3 {
+      font-family: 'Playfair Display', serif; font-size: 1rem;
+      margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+
+    /* ── FEATURED PUBLICATIONS ── */
+    #featured-pubs { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .pub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid var(--border); }
+    .pub-card {
+      padding: 2rem; border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border); transition: background 0.2s;
+    }
+    .pub-card:nth-child(even) { border-right: none; }
+    .pub-card:nth-last-child(-n+2) { border-bottom: none; }
+    .pub-card:hover { background: var(--accent-light); }
+    .pub-year { font-size: 0.75rem; color: var(--accent); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .pub-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; line-height: 1.35; margin-bottom: 0.5rem; }
+    .pub-journal { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-right { min-height: 360px; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3) { border-right: 1px solid var(--border); }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .pub-grid { grid-template-columns: 1fr; }
+      .pub-card { border-right: none; }
+      .pub-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .pub-card:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Iyanuoluwa E. Olalowo</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <header class="hero">
+    <div class="hero-left">
+      <span class="hero-tag fade-up">Research Assistant · Kent State University</span>
+      <h1 class="hero-name fade-up-1">Iyanuoluwa<br /><em>E. Olalowo</em></h1>
+      <p class="hero-bio fade-up-2">
+        Doctoral scholar specialising in <strong>Early Childhood Education</strong> and
+        <strong>preservice teacher preparation</strong>. My research unpacks teacher recruitment,
+        candidacy, and the delivery of early childhood care among underrepresented groups,
+        using mixed methods and qualitative inquiry.
+      </p>
+      <div class="hero-cta fade-up-3">
+        <a href="research.html" class="btn-primary">View Publications</a>
+        <a href="cv.html" class="btn-outline">Download CV</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img
+        src="https://github.com/Silachim/iyanuoluwa-E/blob/main/134107353440341855.jpg?raw=true"
+        alt="Iyanuoluwa E. Olalowo"
+        class="hero-photo"
+      />
+      <div class="hero-photo-overlay">
+        <div class="hero-photo-badge">Kent State University</div>
+        <div class="hero-photo-caption">School of Teaching, Learning &amp; Curriculum Studies</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── STATS STRIP ── -->
+  <div class="stats-strip">
+    <div class="stat-item fade-up">
+      <div class="stat-num">22<span>+</span></div>
+      <div class="stat-label">Publications</div>
+    </div>
+    <div class="stat-item fade-up-1">
+      <div class="stat-num">208<span>+</span></div>
+      <div class="stat-label">Citations</div>
+    </div>
+    <div class="stat-item fade-up-2">
+      <div class="stat-num">2,749<span>+</span></div>
+      <div class="stat-label">Reads</div>
+    </div>
+    <div class="stat-item fade-up-3">
+      <div class="stat-num">6<span>+</span></div>
+      <div class="stat-label">Years Research</div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT SNIPPET ── -->
+  <section id="about-snippet">
+    <div class="section-header">
+      <span class="section-num">01 —</span>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I am a doctoral candidate in the School of Teaching, Learning, and Curriculum Studies at
+          <strong>Kent State University</strong>, where I serve as a Research Assistant at the
+          KSU Child Development Center. My scholarship sits at the intersection of early childhood
+          education policy, teacher preparation, and the experiences of underrepresented communities
+          in early care and education settings.
+        </p>
+        <p>
+          My research employs <strong>mixed methods, qualitative analysis, and quantitative design</strong>
+          to investigate the process and product of teacher recruitment, candidacy, and professional
+          preparation — with a particular focus on ECE delivery among communities that have
+          historically been marginalised in educational research and policy.
+        </p>
+        <p>
+          My work spans comparative contexts, with publications examining preschool environments
+          in Nigeria, indigenous language acquisition, COVID-19's impact on youth learning, and
+          the reconceptualisation of early childhood education policy in sub-Saharan Africa.
+        </p>
+        <a href="contact.html" class="btn-outline" style="margin-top:0.5rem;">Get in Touch</a>
+      </div>
+      <div class="about-sidebar">
+        <h3>Research Interests</h3>
+        <div class="tag-list">
+          <span class="tag">Early Childhood Education</span>
+          <span class="tag">Teacher Preparation</span>
+          <span class="tag">Preservice Teachers</span>
+          <span class="tag">Underrepresented Groups</span>
+          <span class="tag">Indigenous Languages</span>
+          <span class="tag">Mixed Methods</span>
+          <span class="tag">Nigeria / Africa</span>
+          <span class="tag">ECE Policy</span>
+        </div>
+        <h3>Affiliations</h3>
+        <div class="tag-list">
+          <span class="tag">Kent State University</span>
+          <span class="tag">NAEYC</span>
+          <span class="tag">AERA</span>
+          <span class="tag">KSU Child Dev. Center</span>
+        </div>
+        <h3>ORCID</h3>
+        <div class="tag-list">
+          <span class="tag">0000-0002-9217-3106</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED PUBLICATIONS ── -->
+  <section id="featured-pubs">
+    <div class="section-header">
+      <span class="section-num">02 —</span>
+      <h2 class="section-title">Featured Publications</h2>
+    </div>
+    <div class="pub-grid">
+      <div class="pub-card">
+        <div class="pub-year">2025</div>
+        <div class="pub-title">Reconceptualising Early Childhood Education in Nigeria: A Praxis for Policy and Research</div>
+        <div class="pub-journal">Oxford Review of Education</div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-year">2024</div>
+        <div class="pub-title">Book Review: Understanding the Transnational Lives and Literacies of Immigrant Children</div>
+        <div class="pub-journal">Global Studies of Childhood, Vol. 14 (3)</div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-year">2021</div>
+        <div class="pub-title">Combating the Danger of a Single Story: Empirical Comparison of Preschool Resources in Rural and Urban Ibadan</div>
+        <div class="pub-journal">Early Childhood Education Research</div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-year">2020</div>
+        <div class="pub-title">Accounts and Thoughts of Overage Children: A Qualitative Study on the Physical and Emotional Environment of Preschools in Ibadan, Nigeria</div>
+        <div class="pub-journal">American Journal of Qualitative Research, 4 (3), 1–13</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="research.html" class="btn-primary">View All Publications</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div>
+      <div class="footer-name">Iyanuoluwa<br /><em>E. Olalowo</em></div>
+      <div class="footer-affil">Research Assistant, Early Childhood Education — Kent State University</div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:iolalowo@kent.edu" class="footer-link">iolalowo@kent.edu</a>
+      <a href="https://www.researchgate.net/profile/Iyanuoluwa-Olalowo" class="footer-link" target="_blank">ResearchGate</a>
+      <a href="https://scholar.google.com/citations?user=_GOHKNoAAAAJ" class="footer-link" target="_blank">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-9217-3106" class="footer-link" target="_blank">ORCID</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <span>© 2026 Iyanuoluwa Emmanuel Olalowo. All rights reserved.</span>
+    <span>Kent State University</span>
+  </div>
+
+</body>
+</html>
