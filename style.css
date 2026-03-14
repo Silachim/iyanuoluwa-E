@@ -1,0 +1,156 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0e0d0b;
+  --paper: #f5f2ec;
+  --accent: #c0392b;
+  --accent-light: #f9ece9;
+  --muted: #6b6558;
+  --border: #d4cfc4;
+  --white: #ffffff;
+  --section-gap: 5rem;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  background: var(--ink); color: var(--white);
+  padding: 0.85rem 2rem; text-decoration: none;
+  font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  transition: background 0.2s; display: inline-block;
+}
+.btn-primary:hover { background: var(--accent); }
+.btn-outline {
+  border: 1px solid var(--ink); color: var(--ink);
+  padding: 0.85rem 2rem; text-decoration: none;
+  font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  transition: all 0.2s; display: inline-block;
+}
+.btn-outline:hover { background: var(--ink); color: var(--white); }
+
+/* ── PAGE HEADER BANNER ── */
+.page-banner {
+  background: var(--ink);
+  padding: 4rem 3rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-banner::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);
+  background-size: 24px 24px;
+  opacity: 0.04;
+}
+.page-banner-inner { position: relative; z-index: 1; }
+.page-banner-label {
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); font-weight: 500; margin-bottom: 0.75rem;
+}
+.page-banner-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--white); letter-spacing: -1.5px; line-height: 1.05;
+}
+.page-banner-title em { font-style: italic; color: var(--accent); }
+.page-banner-sub {
+  color: rgba(255,255,255,0.5); font-size: 0.92rem; margin-top: 0.75rem;
+}
+
+/* ── SECTION ── */
+section { padding: var(--section-gap) 3rem; }
+.section-header {
+  display: flex; align-items: baseline; gap: 1.5rem;
+  margin-bottom: 3rem; border-bottom: 1px solid var(--border);
+  padding-bottom: 1.25rem;
+}
+.section-num { font-family:'Playfair Display',serif; font-style:italic; font-size:1rem; color:var(--accent); }
+.section-title { font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(1.8rem,3.5vw,2.5rem); letter-spacing:-1px; }
+
+/* ── TAGS ── */
+.tag-list { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem; }
+.tag { background:var(--accent-light); color:var(--accent); font-size:0.78rem; padding:0.3rem 0.75rem; font-weight:500; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink); color: var(--white);
+  padding: 3.5rem 3rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3rem; align-items: center;
+}
+.footer-name { font-family:'Playfair Display',serif; font-weight:900; font-size:2rem; letter-spacing:-1px; margin-bottom:0.5rem; }
+.footer-name em { font-style:italic; color:var(--accent); }
+.footer-affil { font-size:0.85rem; color:rgba(255,255,255,0.45); }
+.footer-links { display:flex; flex-direction:column; gap:0.65rem; align-items:flex-end; }
+.footer-link { color:rgba(255,255,255,0.55); text-decoration:none; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; transition:color 0.2s; }
+.footer-link:hover { color:var(--accent); }
+.footer-bottom { background:#080806; padding:1.1rem 3rem; display:flex; justify-content:space-between; font-size:0.72rem; color:rgba(255,255,255,0.25); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding:1rem 1.5rem; }
+  .nav-links { gap:1.25rem; }
+  section { padding:3rem 1.5rem; }
+  .page-banner { padding:3rem 1.5rem 2.5rem; }
+  footer { grid-template-columns:1fr; gap:2rem; padding:2.5rem 1.5rem; }
+  .footer-links { align-items:flex-start; }
+  .footer-bottom { padding:1rem 1.5rem; flex-direction:column; gap:0.4rem; }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.fade-up { animation: fadeUp 0.55s ease both; }
+.fade-up-1 { animation: fadeUp 0.55s 0.1s ease both; }
+.fade-up-2 { animation: fadeUp 0.55s 0.2s ease both; }
+.fade-up-3 { animation: fadeUp 0.55s 0.3s ease both; }
+.fade-up-4 { animation: fadeUp 0.55s 0.4s ease both; }
